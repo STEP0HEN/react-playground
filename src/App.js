@@ -3,8 +3,8 @@ import Editable from './components/EditableRow';
 import ReadOnly from './components/ReadOnlyRow';
 import { nanoid } from 'nanoid';
 import './App.css';
+
 const mockData = require('./mockData.json');
-console.log(mockData);
 
 export default function App() {
   const [data, setData] = useState(mockData);
@@ -29,7 +29,6 @@ export default function App() {
     const fieldValue = event.target.value;
     const newFormData = { ...formData };
     newFormData[fieldName] = fieldValue;
-    console.log(fieldValue, fieldName, newFormData);
     setFormData(newFormData);
   };
 
@@ -93,7 +92,7 @@ export default function App() {
   const handleCancelEdit = () => {
     setEditContactId(null);
   };
-  
+
   return (
     <div className="App">
       <form onSubmit={handleEditSubmit}>
